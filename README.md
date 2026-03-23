@@ -28,4 +28,14 @@ L'API est accessible sur `http://localhost:8080/api/articles` :
 ##  Documentation API
 La documentation interactive (Swagger UI) est disponible à l'adresse suivante une fois le serveur lancé :
 `http://localhost:8080/swagger-ui/index.html`
+## 📂 Structure du Projet et Rôle des Fichiers
 
+L'arborescence suit la structure standard Maven pour assurer la modularité :
+
+1. **`pom.xml`** : Fichier de configuration Maven. Il définit les dépendances du projet (Spring Boot, JPA, H2, Swagger) et gère le cycle de vie de l'application.
+2. **`BlogApplication.java`** : Point d'entrée de l'application. Ce fichier contient :
+   - La classe `@SpringBootApplication` pour lancer le serveur.
+   - L'entité `@Entity` (Modèle) qui définit la structure d'un article en base de données.
+   - Le `@Repository` qui gère les opérations CRUD et la recherche.
+   - Le `@RestController` qui définit les routes de l'API (Endpoints).
+3. **`index.html`** : Interface Frontend de test. Situé dans `static/`, il permet de consommer l'API de manière visuelle et de vérifier que les requêtes fonctionnent.
